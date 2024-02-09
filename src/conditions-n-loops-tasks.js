@@ -38,8 +38,16 @@ function isPositive(number) {
  *  -5, 0, 5      => 5
  *  -0.1, 0, 0.2  => 0.2
  */
-function getMaxNumber(/* a, b, c */) {
-  throw new Error('Not implemented');
+function getMaxNumber(...args) {
+  let [max] = args;
+
+  for (let i = 1; i < args.length; i += 1) {
+    const current = args[i];
+
+    if (current > max) max = current;
+  }
+
+  return max;
 }
 
 /**
